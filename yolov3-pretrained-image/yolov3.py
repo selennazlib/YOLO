@@ -8,7 +8,7 @@ This is a temporary script file.
 import cv2
 import numpy as np
 
-path = 'C:\\Users\\S BASA\\Desktop\\YOLO\\yolov3-pretrained-image\\images\\cats.jpg'
+path = 'C:/Users/S BASA/Desktop/YOLO/yolov3-pretrained-image/images/img.jpg'
 
 img = cv2.imread(path)
 # print(img) to crosscheck to see if we read the image right
@@ -65,7 +65,7 @@ colors = np.tile(colors, (18, 1))
 # The numpy.tile() function constructs a new array by repeating array – ‘arr’, the number of times we want to repeat as per repetitions.
 # print(colors)
 
-model = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'yolov3.weights')
+model = cv2.dnn.readNetFromDarknet('yolov3.cfg', 'C:/Users/S BASA/Desktop/yolov3.weights')
 
 layers = model.getLayerNames()
 output_layer = [layers[layer - 1] for layer in model.getUnconnectedOutLayers()]
@@ -100,4 +100,5 @@ for detection_layer in detection_layers:
             cv2.putText(img, label, (start_x, start_y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, box_color, 1)
 
 
-    cv2.imshow('Detection Windows', img)
+ 
+cv2.imshow('Detection Windows', img)
